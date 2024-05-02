@@ -14,6 +14,7 @@ do
 	counter=`expr $counter + 1`
 	echo Viewing directory no. $counter/$total_files $i
 	cd $i
+	# 2d brain visualization for inspection
 	freeview mri/brain.mgz
 	freeview -v \
 	mri/T1.mgz \
@@ -25,6 +26,7 @@ do
 	surf/rh.white:edgecolor=blue \
 	surf/rh.pial:edgecolor=red
 
+	# 3d brain visualization for inspection
 	freeview -f surf/lh.pial:annot=aparc.annot:name=pial_aparc:visible=0 \
 	surf/lh.pial:annot=aparc.a2009s.annot:name=pial_aparc_des:visible=0 \
 	surf/lh.inflated:overlay=lh.thickness:overlay_threshold=0.1,3::name=inflated_thickness:visible=0 \
